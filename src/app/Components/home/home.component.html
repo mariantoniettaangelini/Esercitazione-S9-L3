@@ -1,0 +1,17 @@
+<h2 class="text-center">Post che ti potrebbero piacere</h2>
+<div class="row justify-content-center">
+  <div class="col-7 g-3" *ngFor="let p of postArr">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-start border border-3">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">{{p.title}}</div>
+          {{p.body}}
+          <p class="d-flex justify-content-between mt-3 mb-0 text-secondary">
+            <span>{{p.tags}}</span>
+            <span class="ms-auto">{{p.id}}</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
