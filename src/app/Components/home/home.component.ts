@@ -10,10 +10,18 @@ import { iJsonImp } from '../../Models/iJsonImp';
 })
 export class HomeComponent {
 
-  postArr:iPost[] = []
+  postArr:iPost[] = [];
+  favPost!: iPost;
 
   ngOnInit() {
-    this.getPosts()
+    this.getPosts().then(() => {
+
+    let favPost = this.getFavPost()
+    if(favPost) {
+      this.favPost = favPost
+    }
+  })
+
   }
 
   async getPosts() {
@@ -21,6 +29,10 @@ export class HomeComponent {
     const allPosts = <iJsonImp> await response.json()
 
     this.postArr = allPosts.posts
+  }
+
+  getFavPost() {
+    return this.postArr.shift()
   }
 
 }
