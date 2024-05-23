@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { iPost } from '../../Models/post';
 import { iJsonImp } from '../../Models/iJsonImp';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
