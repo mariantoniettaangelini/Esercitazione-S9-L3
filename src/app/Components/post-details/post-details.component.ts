@@ -18,12 +18,15 @@ export class PostDetailsComponent {
 }
 
 ngOnInit() {
-  this.route.params.subscribe((params:any)=> {
-    let dettaglio = this.postArr.find(d => d.id === params.id)
-    if(dettaglio) {
-      this.postInDetail = dettaglio
-      console.log(this.postInDetail)
-    }
+  this.getPosts().then(()=> {
+    this.route.params.subscribe((params:any)=> {
+      let dettaglio = this.postArr.find(d => d.id == params.id)
+      console.log(dettaglio)
+      if(dettaglio) {
+        this.postInDetail = dettaglio
+      }
+    })
+
   })
 }
 
