@@ -1,1 +1,18 @@
-<p>Post-details</p>
+<h2 class="text-center" *nfIf="postInDetail"></h2>
+<div class="row justify-content-center">
+  <div class="col-12 g-3">
+    <h2 class="text-center">Dettali sul tuo post:</h2>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-start border border-3 border-warning">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">{{postInDetail.title}}</div>
+          {{postInDetail.body}}
+          <p class="d-flex justify-content-between mt-3 mb-0 text-secondary">
+            <span>{{postInDetail.tags}}</span>
+            <span class="ms-auto">{{postInDetail.active}}</span>
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
